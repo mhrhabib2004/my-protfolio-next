@@ -4,10 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { useTheme } from "next-themes"; 
+import { FaSun, FaMoon } from "react-icons/fa"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { theme, setTheme } = useTheme(); 
   return (
     <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
@@ -23,7 +25,7 @@ const Navbar = () => {
             Landwind
           </span>
         </Link>
-        
+
         {/* Menu toggle button (Mobile) */}
         <div className="lg:hidden">
           <button
@@ -61,8 +63,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Download Button */}
-        <div className="hidden lg:flex items-center lg:order-2">
+        {/* Download Button and Theme Toggle */}
+        <div className="hidden lg:flex items-center lg:order-2 space-x-4">
+          {/* Theme Toggle Button */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700"
+          >
+            {theme === "dark" ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
+          </button>
+
+          {/* Download Button */}
           <Link
             href="https://themesberg.com/product/tailwind-css/landing-page"
             className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5"
