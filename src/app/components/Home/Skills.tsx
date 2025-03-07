@@ -20,20 +20,20 @@ const Skills = () => {
       <div className="text-center text-3xl font-bold p-4">
         <h2>My Skills</h2>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 justify-center">
         {skillIcon.map((skill) => (
           <div
             key={skill.id}
-            className="m-2 group px-10 py-5 bg-white/10 rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#abd373] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&_p]:delay-200 [&_p]:transition-all"
+            className="m-2 group px-10 py-5 bg-white/10 rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#abd373] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&_p]:delay-200 [&_p]:transition-all hover:bg-[#001f3f] hover:text-white"
           >
             <Image
-              className="rounded-full lg:max-w-[70%] max-w-[60%] mx-auto outline outline-[.7rem] outline-offset-[.1rem] outline-rose-400/30"
+              className="rounded-full lg:max-w-[70%] max-w-[60%] mx-auto outline outline-[.7rem] outline-offset-[.1rem] outline-rose-400/30 group-hover:outline-blue-500"
               src={skill.icon}
               alt={skill.title}
               width={100}
               height={100}
             />
-            <p className="cardtxt font-semibold  tracking-wider group-hover:text-gray-700 text-xl p-1 mt-1">
+            <p className="cardtxt font-semibold tracking-wider text-xl p-1 mt-1 group-hover:text-gray-200">
               {skill.title}
             </p>
           </div>

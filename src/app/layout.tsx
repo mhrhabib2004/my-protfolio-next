@@ -31,8 +31,13 @@ export default function RootLayout({
       >
         
         <ThemeProvider attribute="class" defaultTheme="light">
-        <Navbar />
-      {children}
+        <div className="w-[98%] mx-auto p-1">
+              <div className="min-h-screen">
+              <Navbar />
+                {children}
+                {/* <Toaster /> */}
+              </div>
+            </div>
     </ThemeProvider>
       </body>
     </html>
